@@ -1,0 +1,29 @@
+#main{
+	margin-left:100px;
+	width:70%;
+	}
+#header{
+	width:100%;
+	height:100px;
+	background-color:#484848;
+}
+#blog_page{
+margin:5px 0px 5px 0px;	
+width:79%;
+height:600px;
+float:left;
+background-color:#EFDECD;	
+}
+#tags_cloud{
+margin:5px 0px 5px 0px;	
+background-color:#EFDECD;	
+width:20%;
+height:600px;
+float:right;
+}
+#footer{
+background-color:#399240;	
+width:100%;
+height:100px;
+clear:both;	
+}
