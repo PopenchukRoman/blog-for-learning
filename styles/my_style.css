@@ -1,0 +1,50 @@
+   body{
+   	margin:0px;
+   	}
+   
+   p{
+   padding-left:20px;
+   padding-right:20px;
+   }
+   h1{
+   padding-left:20px;
+   
+   }
+   span{
+   padding-left:20px;
+   }
+   
+    #main{
+	margin:0px 0px 0px 100px;
+	width:70%;
+	}
+  #header{
+	font-family: Aria serif;
+	text-align:center;
+	font-size: 30px;
+	color: white;
+	width:1200px;
+	height:100px;
+	background-color:#484848;
+	}
+#blog_page_tags_conteiner{width:100%;}	
+#blog_page{
+	margin:5px 0px 5px 0px;	
+	width:1000px;
+	height:1000px;
+	float:left;
+	background-color:#EFDECD;	
+	}
+     #tags{
+	margin:5px 0px 5px 5px;	
+	background-color:#EFDECD;	
+	width:195px;
+	height:1000px;
+	float:left;
+	}
+   #footer{
+	background-color:#399240;	
+	width:1200px;
+	height:100px;
+	clear:both;	
+	}
