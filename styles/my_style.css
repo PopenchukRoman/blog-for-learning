@@ -34,15 +34,17 @@
 #blog_page{
 	margin: 0px auto;
 	margin-top:5px;	
-	width:1000px;
+	width:945px;
 	height:3100px;
 	float:left;
-	background-color:#EFDECD;	
+	background-color:#EFDECD;
+	padding-left:25px;
+	padding-right:25px;	
 	}
      #tags{
 	margin:5px 0px 0px 5px;
 	background-color:#EFDECD;	
-	width:195px;
+	width:200px;
 	height:3100px;
 	float:left;
 	}

@@ -18,4 +18,8 @@ $(document).ready(function(){
                 $("#tags").jQCloud(word_list);
             });
 
+	$('.entry-content').not('p .p_first').hide();
+	$('.entry-content .p_firts').css({'backgroundColor':'white'});
+
+
 });
