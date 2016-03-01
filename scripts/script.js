@@ -17,5 +17,27 @@ $(document).ready(function(){
             $(function () {
                 $("#tags").jQCloud(word_list);
             });
-
+			
+	$(".entry_content").children().hide();
+	$('div p .first_p').fadeIn();
+	  $('<span class="read">Читать далее -></span>').insertAfter("#first_p");
+	  $(".read").hover(function(){
+	     $(this).addClass('readHover')},
+	     function(){
+		$(this).removeClass('readHover');  
+	  });
+	  $(".read").click(function(){
+	    $(this).fadeOut();
+	    $(this).parent().children().show();
+		$('<span class="spoiler">Cвернуть</span>').insertAfter("div .entry_content");
+	  });
+	  $('.spoiler').hover(function(){
+	     $(this).addClass('spoilerHover')},
+	     function(){
+		$(this).removeClass('spoilerHover');  
+	  });
+	// $('.spoiler').click(function(){
+	//	$(this).parent().children().hide().not('#first_p');
+	 // });
+		
 });
