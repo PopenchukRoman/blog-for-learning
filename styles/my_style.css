@@ -1,14 +1,14 @@
 
-   body, html{
-   	margin:0px 0px 30px 0px;
-	padding:0px;
-	text-align:center;
-   	}
-   
+    hr{
+       text-align:left;
+       margin-left:0px;
+       width:80%;
+       background-color:green;
+	}   
     #main{
+    	position:relative;
 	margin:10px 0px 0px 100px;
 	width:1200px;
-	height:3500px;
 	text-align:left;
 	}
 	
@@ -18,6 +18,7 @@
    }
    
    h1{
+   color:#116062;
    padding-left:20px;
    }
 
@@ -26,32 +27,40 @@
 	text-align:center;
 	font-size: 30px;
 	color: white;
-	width:1200px;
 	height:100px;
 	background-color:#484848;
 	}
 
 #blog_page{
-	margin: 0px auto;
 	margin-top:5px;	
-	width:945px;
-	height:3100px;
+	margin-bottom:5px;
+	width:70%;
 	float:left;
 	background-color:#EFDECD;
 	padding-left:25px;
 	padding-right:25px;	
 	}
      #tags{
-	margin:5px 0px 0px 5px;
-	background-color:#EFDECD;	
-	width:200px;
-	height:3100px;
-	float:left;
+	margin-top:5px;
+	margin-bottom:5px;
+	margin-left:75%;
+	background-color:#EFDECD;
 	}
    #footer{
 	background-color:#399240;	
-	width:1200px;
-	height:100px;
-	margin:5px 0px 0px 0px;
-	clear:both;	
+	height:150px;
+	clear:both;
+	border-radius: 0px 0px 10px 10px;	
 	}
+.public_time{
+	margin-left:5em;
+}	
+.readHover{
+	background:#66ccff;
+	}
+.readmore_collapse{
+border-radius: 3px 3px 3px 3px;	
+color:blue;
+	}
+	
+

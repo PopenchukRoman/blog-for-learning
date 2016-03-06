@@ -4,22 +4,40 @@ $(document).ready(function(){
 	});
  // создание массива тегов
             var word_list = [
-                {text:"Родинки", weight:13, link:"https://github.com/DukeLeNoir/jQCloud"},
-                {text:"Родинки", weight:10.5, html:{title:"My Title", "class":"custom-class"}, link:{href:"http://jquery.com/", target:"_blank"}},
-                {text:"Родинки", weight:9.4},
-                {text:"Родинки", weight:8},
-                {text:"Родинки", weight:6.2},
-                {text:"Родинки", weight:5},
-                {text:"Родинки", weight:5},
-                {text:"Родинки", weight:5},
-                {text:"Родинки", weight:5}
+                {text:"родинки", weight:13, link:{href:"#post1"}},
+                {text:"узоры", weight:10.5, link:{href:"#post2"}},
+                {text:"линия сердца", weight:9.4},
+                {text:"род", weight:8},
+                {text:"родин", weight:6.2},
+                {text:"родинк", weight:5},
+                {text:"родин", weight:5},
+                {text:"родин", weight:5},
+                {text:"родин", weight:5}
             ];
             $(function () {
                 $("#tags").jQCloud(word_list);
             });
+          //  alert( $("#blog_page").css('height'));
+          //  alert(getComputedStyle(blog_page).height);
+          // $('#tags').css({height: $("#blog_page").css('height')});
+             $('#tags').css({height: '1671px'});
 
-	$('.entry-content').not('p .p_first').hide();
-	$('.entry-content .p_firts').css({'backgroundColor':'white'});
-
-
+			
+	$(".entry_content").hide();
+	$('<span class="readmore_collapse">Read more..</span>').insertAfter(".first_p");
+	 
+	  $(".readmore_collapse").hover(function(){
+	     $(this).addClass('readHover')},
+	     function(){
+		$(this).removeClass('readHover');  
+	  });
+	 $('.readmore_collapse').click(function(){
+	 $(this).next().toggle();
+	 if($(this).next().is(':visible')){
+		$(this).text('Collapse')	 
+	 }else{$(this).text('Read more..')}
+	 });
+	 $('#tags') 
+	      	
+	
 });
