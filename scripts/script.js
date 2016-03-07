@@ -11,13 +11,8 @@ $(document).ready(function () {
         {text: "родин", weight: 5},
         {text: "родин", weight: 5}
     ];
-    $(function () {
-        $("#tags").jQCloud(word_list);
-    });
-    //  alert( $("#blog_page").css('height'));
-    //  alert(getComputedStyle(blog_page).height);
-    // $('#tags').css({height: $("#blog_page").css('height')});
-    $('#tags').css({height: '1671px'});
+
+    $("#tags").jQCloud(word_list);
 
     $(".entry_content").hide();
     $('<span class="readmore_collapse">Read more..</span>').insertAfter(".first_p");
@@ -36,5 +31,4 @@ $(document).ready(function () {
             $(this).text('Read more..')
         }
     });
-    $('#tags')
 });
