@@ -39,6 +39,7 @@ h1 {
     background-color: #EFDECD;
     padding-left: 25px;
     padding-right: 25px;
+    min-height:800px;
 }
 
 #tags {

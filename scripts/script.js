@@ -4,12 +4,12 @@ $(document).ready(function () {
         {text: "родинки", weight: 13, link: {href: "#post1"}},
         {text: "узоры", weight: 10.5, link: {href: "#post2"}},
         {text: "линия сердца", weight: 9.4},
-        {text: "род", weight: 8},
-        {text: "родин", weight: 6.2},
-        {text: "родинк", weight: 5},
-        {text: "родин", weight: 5},
-        {text: "родин", weight: 5},
-        {text: "родин", weight: 5}
+        {text: "линии", weight: 8},
+        {text: "левая рука", weight: 6.2},
+        {text: "правая рука", weight: 5},
+        {text: "линия жизни", weight: 5},
+        {text: "линия здоровья", weight: 5},
+        {text: "линия ума", weight: 5}
     ];
 
     $("#tags").jQCloud(word_list);
@@ -23,6 +23,9 @@ $(document).ready(function () {
         function () {
             $(this).removeClass('readHover');
         });
+        
+     $('#tags').height($('#blog_page').height());
+         
     $('.readmore_collapse').click(function () {
         $(this).next().toggle();
         if ($(this).next().is(':visible')) {
@@ -30,5 +33,8 @@ $(document).ready(function () {
         } else {
             $(this).text('Read more..')
         }
+        $('#tags').height($('#blog_page').height());
+        
     });
+       
 });
