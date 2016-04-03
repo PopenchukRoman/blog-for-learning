@@ -14,60 +14,41 @@
     <script type="text/javascript" src="scripts/script.js"></script>
     <script type="text/javascript" src="jqcloud/jqcloud-1.0.4.js"></script>
     <script type="text/javascript" src="jquery-paginator-3000-1.2.0/jquery.paginator.3000.js"></script>
-    <script type="text/javascript">
-        $(document).bind('ready', function () {
-            var page = /page=([^#&]*)/.exec(window.location.href);
-            page = page ? page[1] : 400;
-
-            $('#paginator').paginator({
-                pagesTotal: 20,
-                pagesSpan: 10,
-                pageCurrent: page,
-                baseUrl: 'index.php?page=%number%',
-                lang: {
-                    next: "Следующая",
-                    last: "Последняя",
-                    prior: "Предыдущая",
-                    first: "Первая",
-                    arrowRight: String.fromCharCode(8594),
-                    arrowLeft: String.fromCharCode(8592)
-                }
-            });
-        })
-    </script>
+ 
 </head>
 <body>
-<?php
+  <?php
 
-$connection = mysql_connect("localhost", "root", "root");
-$db = mysql_select_db("bfl_blog");
-mysql_set_charset("utf8");	
+  $connection = mysql_connect("localhost", "root", "root");
+  $db = mysql_select_db("bfl_blog");
+  mysql_set_charset("utf8");	
 	if(!$connection || !$db){
 	
 	exit(mysql_error());
 	}
-$result = mysql_query("SELECT * FROM news WHERE flag ='public' ORDER BY id DESC");
+  $result = mysql_query("SELECT * FROM news JOIN category, news_tags WHERE flag ='public' ORDER BY news_id DESC");
 
-mysql_close();
+  mysql_close();
 
 
-?>
+  ?>
 
-<div id="main">
+  <div id="main">
     <div id="header"><br/>БЛОГ ХИРОМАНТА</div>
     <div id="blog_page">
     <?php
-while($row = mysql_fetch_array($result))
+  while($row = mysql_fetch_array($result))
 	{?>
 	
-  <h1 class="entry_title"><?php echo $row['title']; ?></h1>
+       <h1 class="entry_title"><?php echo $row['title']; ?></h1>
        <span class="posted_date"><?php echo $row['date'];?>&nbsp;</span>
        <span class="posted_time"><?php echo $row['time'];?>&nbsp;</span>
-       <span class="posterer"><?php echo $row['author'];?></span>
-        <br>
-        <p class="first_p"><?php echo $row['first_paragraf'] ?></p>
-       <div class="entry_content"><?php echo $row['text'];?></div>  
-       <hr />
+       <span class="posterer"><?php echo $row['author'];?></span><br><br>
+       <span class="category_name"><i>category:</i> <?php echo $row['category_name'];?></span><br />
+      <span><em>tags:</em><?php echo $row['tag_name']?></span>
+       <p class="first_p"><?php echo $row['first_paragraf'] ?></p>
+       <div class="entry_content"><?php echo $row['text'];?></div> 
+             <hr />
   <?php } ?>
    	 <br><br><br>
         <div class="paginator" id="paginator"></div>

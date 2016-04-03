@@ -1,4 +1,23 @@
 $(document).ready(function () {
+   //подключаем пагинатор
+   var page = /page=([^#&]*)/.exec(window.location.href);
+            page = page ? page[1] : 400;
+
+            $('#paginator').paginator({
+                pagesTotal: 20,
+                pagesSpan: 10,
+                pageCurrent: page,
+                baseUrl: 'index.php?page=%number%',
+                lang: {
+                    next: "Следующая",
+                    last: "Последняя",
+                    prior: "Предыдущая",
+                    first: "Первая",
+                    arrowRight: String.fromCharCode(8594),
+                    arrowLeft: String.fromCharCode(8592)
+                }
+            }); 
+  
     // создание массива тегов
     var word_list = [
         {text: "родинки", weight: 13, link: {href: "#post1"}},
