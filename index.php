@@ -17,29 +17,27 @@
  
 </head>
 <body>
-  <?php
-
-  $connection = mysql_connect("localhost", "root", "root");
-  $db = mysql_select_db("bfl_blog");
-  mysql_set_charset("utf8");	
-	if(!$connection || !$db){
-	
-	exit(mysql_error());
-	}
-  $result = mysql_query("SELECT * FROM news JOIN category, news_tags WHERE flag ='public' ORDER BY news_id DESC");
-
-  mysql_close();
-
-
-  ?>
-
+ 
   <div id="main">
     <div id="header"><br/>БЛОГ ХИРОМАНТА</div>
     <div id="blog_page">
-    <?php
-  while($row = mysql_fetch_array($result))
-	{?>
-	
+   <?php
+
+//Include connection.php
+
+  include 'connection.php';
+  
+   $result = mysql_query("SELECT DISTINCT (title), date, time, author, first_paragraf, text, tag_name FROM news_tags
+  				  JOIN news ON news_tags.news_id = news.news_id
+  				  JOIN tags ON news_tags.tags_id =tags.tags_id
+  				  JOIN category
+  				  WHERE flag ='public' ORDER BY news.news_id DESC ");
+
+  mysql_close();
+
+  while($row = mysql_fetch_array($result)){
+  
+	?>	
        <h1 class="entry_title"><?php echo $row['title']; ?></h1>
        <span class="posted_date"><?php echo $row['date'];?>&nbsp;</span>
        <span class="posted_time"><?php echo $row['time'];?>&nbsp;</span>
@@ -49,7 +47,7 @@
        <p class="first_p"><?php echo $row['first_paragraf'] ?></p>
        <div class="entry_content"><?php echo $row['text'];?></div> 
              <hr />
-  <?php } ?>
+ <?php  }   ?>
    	 <br><br><br>
         <div class="paginator" id="paginator"></div>
         <br><br><br>
