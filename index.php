@@ -27,23 +27,26 @@
 
   include 'connection.php';
   
-   $result = mysql_query("SELECT DISTINCT (title), date, time, author, first_paragraf, text, tag_name FROM news_tags
-  				  JOIN news ON news_tags.news_id = news.news_id
-  				  JOIN tags ON news_tags.tags_id =tags.tags_id
-  				  JOIN category
-  				  WHERE flag ='public' ORDER BY news.news_id DESC ");
+   $result = mysql_query   ("SELECT news.id_news, news.title, news.date, news.time, news.author, news.first_paragraf, news.text, news_tags.id_tags AS tags, category.category_name, GROUP_CONCAT(tags.tag_name SEPARATOR ', ')
+   				  FROM news
+   				  INNER JOIN news_tags ON news.id_news = news_tags.id_news 
+  				  LEFT JOIN tags ON news_tags.id_tags = tags.id_tags
+  				  LEFT JOIN category ON news.id_category = category.id_category
+  				 GROUP BY date");
+  				 
 
   mysql_close();
 
   while($row = mysql_fetch_array($result)){
   
-	?>	
+	?>
+	<!--<h3 class="entry_title"><?php print_r ($row); ?></h3> -->
        <h1 class="entry_title"><?php echo $row['title']; ?></h1>
        <span class="posted_date"><?php echo $row['date'];?>&nbsp;</span>
        <span class="posted_time"><?php echo $row['time'];?>&nbsp;</span>
        <span class="posterer"><?php echo $row['author'];?></span><br><br>
-       <span class="category_name"><i>category:</i> <?php echo $row['category_name'];?></span><br />
-      <span><em>tags:</em><?php echo $row['tag_name']?></span>
+       <span class="category_name"><i>category: </i> <?php echo $row['category_name'];?></span><br />
+      <span><em>tags: </em><?php echo $row[9]?></span>
        <p class="first_p"><?php echo $row['first_paragraf'] ?></p>
        <div class="entry_content"><?php echo $row['text'];?></div> 
              <hr />
