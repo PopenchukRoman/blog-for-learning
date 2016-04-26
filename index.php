@@ -26,10 +26,13 @@
 	
 	exit(mysql_error());
 	}
-  $result = mysql_query("SELECT * FROM news JOIN category, news_tags WHERE flag ='public' ORDER BY news_id DESC");
-
-  mysql_close();
-
+  $result = mysql_query("SELECT news.news_id, news.title, news.date, news.time, news.author, news.first_paragraf, news.text, GROUP_CONCAT(tags.tags_name) FROM news 
+						INNER JOIN news_tags ON news.news_id = news_tags.news_id
+						LEFT JOIN tags ON news_tags.tags_id = tags.tags_id
+						LEFT JOIN category ON category. category_id = news.category_id
+						GROUP BY news.news_id
+						");
+   mysql_close();
 
   ?>
 
@@ -37,19 +40,18 @@
     <div id="header"><br/>БЛОГ ХИРОМАНТА</div>
     <div id="blog_page">
     <?php
-  while($row = mysql_fetch_array($result))
-	{?>
-	
-       <h1 class="entry_title"><?php echo $row['title']; ?></h1>
+while($row = mysql_fetch_array($result)){
+    ?>
+	   <h1 class="entry_title"><?php echo $row['title']; ?></h1>
        <span class="posted_date"><?php echo $row['date'];?>&nbsp;</span>
        <span class="posted_time"><?php echo $row['time'];?>&nbsp;</span>
        <span class="posterer"><?php echo $row['author'];?></span><br><br>
        <span class="category_name"><i>category:</i> <?php echo $row['category_name'];?></span><br />
-      <span><em>tags:</em><?php echo $row['tag_name']?></span>
-       <p class="first_p"><?php echo $row['first_paragraf'] ?></p>
+	   <span><em>tags: <?php echo($row['tags_name']); ?></em></span>
+	  <p class="first_p"><?php echo $row['first_paragraf'] ?></p>
        <div class="entry_content"><?php echo $row['text'];?></div> 
              <hr />
-  <?php } ?>
+  <?php  } ?>
    	 <br><br><br>
         <div class="paginator" id="paginator"></div>
         <br><br><br>
