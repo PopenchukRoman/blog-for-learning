@@ -35,6 +35,7 @@
   				 GROUP BY date");
   				 
 
+
   mysql_close();
 
   while($row = mysql_fetch_array($result)){
@@ -46,11 +47,12 @@
        <span class="posted_time"><?php echo $row['time'];?>&nbsp;</span>
        <span class="posterer"><?php echo $row['author'];?></span><br><br>
        <span class="category_name"><i>category: </i> <?php echo $row['category_name'];?></span><br />
-      <span><em>tags: </em><?php echo $row[9]?></span>
+      <span><em>tags: <a href=''></em><?php echo $row[9]?></a></span>
        <p class="first_p"><?php echo $row['first_paragraf'] ?></p>
        <div class="entry_content"><?php echo $row['text'];?></div> 
              <hr />
  <?php  }   ?>
+
    	 <br><br><br>
         <div class="paginator" id="paginator"></div>
         <br><br><br>

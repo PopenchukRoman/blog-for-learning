@@ -22,6 +22,9 @@ h1 {
     padding-left: 20px;
 }
 
+a   {text-decoration:none;
+}
+
 #header {
     font-family: Aria serif;
     text-align: center;
