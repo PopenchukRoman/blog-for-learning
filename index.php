@@ -21,6 +21,8 @@
   <div id="main">
     <div id="header"><br/>БЛОГ ХИРОМАНТА</div>
     <div id="blog_page">
+  
+
    <?php
 
 //Include connection.php
@@ -32,7 +34,7 @@
    				  INNER JOIN news_tags ON news.id_news = news_tags.id_news 
   				  LEFT JOIN tags ON news_tags.id_tags = tags.id_tags
   				  LEFT JOIN category ON news.id_category = category.id_category
-  				 GROUP BY date");
+  				 GROUP BY id_news");
   				 
 
 
@@ -51,7 +53,13 @@
        <p class="first_p"><?php echo $row['first_paragraf'] ?></p>
        <div class="entry_content"><?php echo $row['text'];?></div> 
              <hr />
- <?php  }   ?>
+ <?php  }  
+ 
+
+ 
+  ?>
+ 
+
 
    	 <br><br><br>
         <div class="paginator" id="paginator"></div>

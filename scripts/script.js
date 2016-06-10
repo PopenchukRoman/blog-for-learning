@@ -5,7 +5,7 @@ $(document).ready(function () {
 
             $('#paginator').paginator({
                 pagesTotal: 20,
-                pagesSpan: 10,
+                pagesSpan: 5,
                 pageCurrent: page,
                 baseUrl: 'index.php?page=%number%',
                 lang: {
@@ -20,8 +20,8 @@ $(document).ready(function () {
   
     // создание массива тегов
     var word_list = [
-        {text: "родинки", weight: 13, link: {href: "#post1"}},
-        {text: "узоры", weight: 10.5, link: {href: "#post2"}},
+        {text: "родинки", weight: 13, link: {href: "#page2"}},
+        {text: "узоры", weight: 10.5, link: {href: "https://docs.google.com/document/d/1pZIgVMzjboHReMd25ugRqPs5Zw9Dw-ONoH11Fq7vGxs/edit"}},
         {text: "линия сердца", weight: 9.4},
         {text: "линии", weight: 8},
         {text: "левая рука", weight: 6.2},
