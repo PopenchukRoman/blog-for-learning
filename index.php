@@ -2,7 +2,7 @@
         "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-    <title>Blog-for-learning</title>
+    <title>EscapeRoomGadgets</title>
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8"/>
     <link href="jquery-paginator-3000-1.2.0/demo/css/styles.css" rel="stylesheet" media="all"/>
     <link rel="stylesheet" type="text/css" href="styles/my_style.css">
@@ -19,7 +19,7 @@
 <body>
  
   <div id="main">
-    <div id="header"><br/>БЛОГ ХИРОМАНТА</div>
+    <div id="header">EscapeRoomGadgets</div>
     <div id="blog_page">
   
 
@@ -29,6 +29,7 @@
 
   include 'connection.php';
   
+ // include 'query.php';
    $result = mysql_query   ("SELECT news.id_news, news.title, news.date, news.time, news.author, news.first_paragraf, news.text, news_tags.id_tags AS tags, category.category_name, GROUP_CONCAT(tags.tag_name SEPARATOR ', ')
    				  FROM news
    				  INNER JOIN news_tags ON news.id_news = news_tags.id_news 
