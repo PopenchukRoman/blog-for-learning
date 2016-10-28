@@ -20,15 +20,15 @@ $(document).ready(function () {
   
     // создание массива тегов
     var word_list = [
-        {text: "родинки", weight: 13, link: {href: "#page2"}},
-        {text: "узоры", weight: 10.5, link: {href: "https://docs.google.com/document/d/1pZIgVMzjboHReMd25ugRqPs5Zw9Dw-ONoH11Fq7vGxs/edit"}},
-        {text: "линия сердца", weight: 9.4},
-        {text: "линии", weight: 8},
-        {text: "левая рука", weight: 6.2},
-        {text: "правая рука", weight: 5},
-        {text: "линия жизни", weight: 5},
-        {text: "линия здоровья", weight: 5},
-        {text: "линия ума", weight: 5}
+        {text: "криптексы", weight: 13, link: {href: "https://www.olx.ua/obyavlenie/kripteks-golovolomka-kvest-kvestkomnata-miniseyf-IDgKQ1K.html"}},
+        {text: "шкатулки с секретом", weight: 10.5, link: {href: "https://www.instagram.com/escaperoom_gadgets/"}},
+        {text: "механика", weight: 9.4},
+        {text: "arduino", weight: 8},
+        {text: "лабиринты", weight: 6.2, link: {href: "https://www.olx.ua/obyavlenie/labirint-dlya-kvestkomnaty-IDnIXoV.html"}},
+        {text: "трости", weight: 5},
+        {text: "часы с секретом", weight: 5},
+        {text: "магические свечи", weight: 5},
+        {text: "сейф", weight: 5}
     ];
 
     $("#tags").jQCloud(word_list);

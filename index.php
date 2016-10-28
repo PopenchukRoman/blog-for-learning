@@ -67,7 +67,10 @@
         <br><br><br>
     </div><!--div id="blog-page"  -->
     <div id="tags"></div>
-    <div id="footer">Footer</div>
+    <div id="footer">Все права защищены
+    <h5>Экспериментальная лаборатория Escape_Room_Gadgets<h5>
+    
+    </div>
 </div>  <!-- main -->
 </body>
 </html>
