@@ -29,7 +29,7 @@
 
   include 'connection.php';
   
- // include 'query.php';
+
    $result = mysql_query   ("SELECT news.id_news, news.title, news.date, news.time, news.author, news.first_paragraf, news.text, news_tags.id_tags AS tags, category.category_name, GROUP_CONCAT(tags.tag_name SEPARATOR ', ')
    				  FROM news
    				  INNER JOIN news_tags ON news.id_news = news_tags.id_news 
