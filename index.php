@@ -19,7 +19,13 @@
 <body>
  
   <div id="main">
-    <div id="header">EscapeRoomGadgets</div>
+    <div id="header">EscapeRoomGadgets
+   <br>
+    <span style = "font-size: 15px;"> 
+   До конца этого дня осталось:
+   <?php echo date("d m Y", timestamp); ?> секунд.
+    </span>     
+    </div>
     <div id="blog_page">
   
 
