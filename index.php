@@ -22,8 +22,8 @@
     <div id="header">EscapeRoomGadgets
    <br>
     <span style = "font-size: 15px;"> 
-   До конца этого дня осталось:
-   <?php echo date("d m Y", timestamp); ?> секунд.
+   Сегодня
+   <?php echo date("d m Y"); ?> г.
     </span>     
     </div>
     <div id="blog_page">
