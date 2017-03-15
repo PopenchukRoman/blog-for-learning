@@ -3,7 +3,7 @@
 <html>
 <head>
     <title>EscapeRoomGadgets</title>
-    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8"/>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF8"/>
     <link href="jquery-paginator-3000-1.2.0/demo/css/styles.css" rel="stylesheet" media="all"/>
     <link rel="stylesheet" type="text/css" href="styles/my_style.css">
     <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet"
@@ -31,12 +31,12 @@
 
    <?php
 
-//Include connection.php
+//	Подключаем connection.php
 
   include 'connection.php';
   
 
-   $result = mysql_query   ("SELECT news.id_news, news.title, news.date, news.time, news.author, news.first_paragraf, news.text, news_tags.id_tags AS tags, category.category_name, GROUP_CONCAT(tags.tag_name SEPARATOR ', ')
+   $result = mysql_query   ("SELECT news.id_news, news.title, news.date, news.time, news.author, news.first_paragraf, news.main_text, news_tags.id_tags AS tags, category.category_name, GROUP_CONCAT(tags.tag_name SEPARATOR ', ')
    				  FROM news
    				  INNER JOIN news_tags ON news.id_news = news_tags.id_news 
   				  LEFT JOIN tags ON news_tags.id_tags = tags.id_tags
@@ -58,7 +58,7 @@
        <span class="category_name"><i>category: </i> <?php echo $row['category_name'];?></span><br />
       <span><em>tags: <a href=''></em><?php echo $row[9]?></a></span>
        <p class="first_p"><?php echo $row['first_paragraf'] ?></p>
-       <div class="entry_content"><?php echo $row['text'];?></div> 
+       <div class="entry_content"><?php echo $row['main_text'];?></div> 
              <hr />
  <?php  }  
  

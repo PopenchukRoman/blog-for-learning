@@ -8,6 +8,4 @@
 	  exit(mysql_error());
 	}
  
-
-
   ?>
